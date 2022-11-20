@@ -1,0 +1,78 @@
+﻿@model ApplictionUserVM
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12" id="register">
+
+            <div class="card col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">Create User</h2>
+                    <hr>
+               <form asp-area="Admin" asp-controller="Users" asp-action="Create" method="post" style="padding-bottom:50px">
+                    <div class="text-danger font-weight-bold " asp-validation-summary=ModelOnly></div>
+                    <input type="hidden" asp-for="NewPssword"  value="1111111111111"/>
+                        <div class="form-group">
+                            <label for="email">mail:</label>
+                            <input type="text" asp-for="Email" class="form-control">
+                           <span asp-validation-for="Email" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" asp-for="password"  class="form-control">
+             <span asp-validation-for="password" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                             <div class="form-group">
+                            <label for="UserName">UserName:</label>
+                            <input type="text" asp-for="userName"  class="form-control">
+                                   <span asp-validation-for="userName" class="text-danger font-weight-bold"></span>
+                
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" asp-for="Address" class="form-control">
+                               <span asp-validation-for="Address" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                              <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" asp-for="PhoneNumber"  class="form-control">
+                               <span asp-validation-for="PhoneNumber" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                        <div class="form-group">
+                                             <label for="RoleID">Role:</label>
+                            <br />
+                       
+                            <select  asp-for="RoleID" class="form-control" asp-items="@(SelectList)ViewBag.roles">
+                          
+
+                            </select>
+                            <span asp-validation-for="RoleID" class="text-danger font-weight-bold"></span>
+               
+                        </div>
+
+                        <div class="form-group text-center mt-3" >
+                            <center>
+                                 <button class="btn btn-outline-danger col-md-2"> create User</button>
+                            </center>
+                           
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+      @section Validationscripts{
+     <script src="~/jquery/jquery.js"></script>
+  <script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+      } 

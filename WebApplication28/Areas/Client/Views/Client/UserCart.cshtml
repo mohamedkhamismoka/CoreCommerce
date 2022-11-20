@@ -1,0 +1,211 @@
+﻿@model IEnumerable<Product_cartVM>
+@inject SignInManager<ApplicationUser> manager
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User cart</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="~/css/heroic-features.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CoreShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-shopping-cart"></i> Cart(<strong>@Model.Count()</strong>)
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user"></i> Account
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                            @if (manager.IsSignedIn(User))
+                            {
+                                <a class="dropdown-item " asp-area="Account" asp-controller="Account" asp-action="logout">logout</a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item " asp-area="Account" asp-controller="Account" asp-action="SignIn">Sign In</a>
+                                <a class="dropdown-item " asp-area="Account" asp-controller="Account" asp-action="SignUp">Sign up</a>
+                            }
+
+                            <a class="dropdown-item " asp-area="Admin" asp-controller="Admin" asp-action="login">Admin login</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h2 class="mt-5"><i class="fa fa-shopping-cart"></i> Shooping Cart</h2>
+        <hr>
+
+        <h4 class="mt-5"> @Model.Count() items(s) in Shopping Cart</h4>
+
+        <div class="cart-items">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <input type="hidden" value="@ViewBag.cartid" class="cart">
+                    <table class="table products">
+
+
+
+                        @foreach (var item in Model)
+                        {
+                            if (!item.SaveForLater)
+                            {
+
+                                <tr class="@item.product.productID">
+                                    <td class="id" style="display:none">@item.product.productID</td>
+                                    <td><img src="~/files/images/@item.product.imgPath" style="width: 5em"></td>
+                                    <td>
+                                        <strong>@item.product.Description</strong>
+                                    </td>
+
+                                    <td>
+
+                                        <a href="" class="Remove">Remove</a><br>
+                                        <a href="" class="SaveForLater">Save for later</a>
+
+                                    </td>
+
+                                    <td>
+                                        <input type="number" value="@item.quantity" min="1" style="text-align:center" class="quantity">
+                                    </td>
+
+                                    <td>$<span class="price">@item.product.unitPrice</span></td>
+                                </tr>
+                            }
+                        }
+
+
+
+                    </table>
+
+                </div>
+                <!-- Price Details -->
+                <div class="col-md-6">
+                    <div class="sub-total">
+                        <table class="table table-bordered table-hover bill">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Price Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Subtotal </td>
+                                    <td>0 </td>
+                                </tr>
+                                <tr>
+                                    <td>Tax</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <th>0</th>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <!-- Save for later  -->
+                <div class="col-md-12">
+                    <a class="btn btn-outline-dark" asp-area="Client" asp-controller="Client" asp-action="Index" asp-route-cartid="@ViewBag.cartid">Continue Shopping</a>
+
+                    @if (@Model.Where(a => a.SaveForLater == false).Count() == 0)
+                    {
+                        <button class="btn btn-outline-info" disabled>Proceed to checkout</button>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-info"  asp-area="Client" asp-controller="Checkout" asp-action="Index" asp-route-cartid="@ViewBag.cartid">Proceed to checkout</a>
+                    }
+
+                    <hr>
+
+                </div>
+
+                <div class="col-md-12">
+
+                    <h4> @Model.Where(a=>a.SaveForLater==true).Count()  item(s) Save for Later</h4>
+                    <table class="table savings">
+                        @foreach (var item in Model)
+                        {
+                            if (item.SaveForLater)
+                            {
+                                <tr>
+                                    <td class="id" style="display:none">@item.product.productID</td>
+                                    <td><img src="~/files/images/@item.product.imgPath" style="width: 5em"></td>
+                                    <td>
+                                        <strong>@item.product.Description</strong>
+                                    </td>
+
+                                    <td>
+
+                                        <a href="" class="remove">Remove</a><br>
+
+
+                                    </td>
+
+                                    <td>
+                                        <input type="number" value="@item.quantity" min="1" style="text-align:center"  class="quantity">
+                                    </td>
+
+                                    <td>$@item.product.unitPrice</td>
+                                </tr>
+                            }
+                        }
+
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/UserCartAjax.js">
+      
+    </script>
+
+</body>
+
+</html>

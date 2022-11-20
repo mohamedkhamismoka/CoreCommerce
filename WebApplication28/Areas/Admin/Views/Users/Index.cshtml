@@ -1,0 +1,147 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<ApplicationUser>
+@inject RoleManager<IdentityRole> Rolemanager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+
+}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">All Users</h4>
+                        <p class="category">List of all stock</p>
+                    </div>
+                    <div class="content table-responsive table-full-width" style="padding:0 20px">
+                        <div class="text-center">
+                            <a class="btn btn-md btn-success " asp-area="Admin" asp-controller="Users" asp-action="Create" title=" Add user"> Add Super/Admin</a>
+
+                        </div>
+                        <table class="table datatable table-striped" id="myTable" style="padding:0 20px">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+
+                                    <th>Actions</th>
+
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Email</td>
+                                        <td>@item.UserName</td>
+                                        <td>@item.address</td>
+
+                                        @if (await UserManager.IsInRoleAsync(item, "Admin") || await UserManager.IsInRoleAsync(item, "Super Admin"))
+                                        {
+
+                                            <td>@((await UserManager.GetRolesAsync(item)).ElementAt(0))</td>
+
+                                        }
+                                        else
+                                        {
+                                            <td>Client</td>
+                                        }
+
+                                        @if (item.isActive)
+                                        {
+                                            <td>
+                                                <span class="label label-success">Active</span>
+                                            </td>
+
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <span class="label label-warning">Blocked</span>
+                                            </td>
+                                        }
+
+
+
+                                        @if (item.isActive)
+                                        {
+                                            <td>
+
+
+                                                <a class="btn btn-sm btn-success ti-close" asp-area="Admin" asp-controller="Users" asp-action="StateChange" asp-route-id="@item.Id" title="Block User"></a>
+                                                <a class="btn btn-sm btn-success ti-view-list-alt" asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@item.Id" title=" User Details"></a>
+                                                <a class="btn btn-sm btn-danger ti-trash" asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id" title=" Delete user"></a>
+
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a class="btn btn-sm btn-success ti-check" asp-area="Admin" asp-controller="Users" asp-action="StateChange" asp-route-id="@item.Id" title="Activate User"></a>
+                                                <a class="btn btn-sm btn-success ti-view-list-alt" asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@item.Id" title=" User Details"></a>
+                                                <a class="btn btn-sm btn-danger ti-trash" asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id" title=" Delete user"></a>
+
+                                            </td>
+
+                                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </tr>
+                                }
+
+
+
+
+
+
+
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Validationscripts{
+
+<script src="~/jquery/jquery.js" type="text/javascript"></script>
+<script src="~/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="~/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+
+}

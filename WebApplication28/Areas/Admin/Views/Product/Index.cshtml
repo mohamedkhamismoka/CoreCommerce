@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ProductVM>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">All Products</h4>
+                        <p class="category">List of all stock</p>
+                    </div>
+                    <div class="content table-responsive table-full-width" style="padding:0 20px">
+
+                        <table class="table table-striped" id="myTable" style="padding:0 20px">
+
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Desc</th>
+                                    <th>Image</th>
+
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.productID</td>
+                                        <td>@item.Name</td>
+
+                                        <td>@item.unitPrice</td>
+                                        <td>@item.Description</td>
+                                        <td>
+                                            <img src="~/files/images/@item.imgPath" alt="" class="img-thumbnail"
+                                             style="width: 50px" asp-append-version="true">
+                                        </td>
+
+                                        <td>
+                                            <a class="btn btn-sm btn-primary ti-view-list-alt" title="Details" asp-area="Admin" asp-controller="Product" asp-action="details" asp-route-id="@item.productID"></a>
+                                            <a class="btn btn-sm btn-danger ti-trash" title="Delete" asp-area="Admin" asp-controller="Product" asp-action="delete" asp-route-id="@item.productID"></a>
+                                            <a class="btn btn-sm btn-info ti-pencil-alt" asp-area="Admin" asp-controller="Product" asp-action="Update" asp-route-id="@item.productID"
+                                           title="update"></a>
+
+
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Validationscripts{
+
+<script src="~/jquery/jquery.js" type="text/javascript"></script>
+<script src="~/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+
+}

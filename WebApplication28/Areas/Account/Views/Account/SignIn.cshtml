@@ -1,0 +1,59 @@
+﻿@model SigninVM
+
+@{
+    ViewBag.title = "SignIn";
+}
+<!-- Navigation -->
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12" id="register">
+
+            <div class="card col-md-8">
+                <div class="card-body">
+
+                    <h2 class="card-title">Login</h2>
+                    <hr>
+                    <form asp-area="Account" asp-controller="Account" asp-action="SignIn" method="post">
+                        <div class="text-danger font-weight-bold" asp-validation-summary="All"></div>
+                        <div class="form-group">
+                            <label for="userName">username:</label>
+                            <input type="text"  placeholder="username"  class="form-control" asp-for="userName">
+                        
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" asp-for="Password" id="passowrd"
+                                   class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-outline-info col-md-2" type="submit"> Login</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+  @section Validationscripts{
+      <script src="~/vendor/jquery/jquery.min.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="~/jquery/jquery.js"></script>
+  <script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+      } 
+

@@ -1,0 +1,103 @@
+﻿@model OrderVM
+@inject IProductOrder product_order;
+@inject IProduct product;
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Order Details</h4>
+
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <tbody>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <td>@Model.Id</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Date</th>
+                                 <td>@Model.Date.ToShortDateString()</td>
+                                </tr>
+
+                                   <tr>
+                                    <th>Price</th>
+                                 <td>@Model.TotalPrice</td>
+                                </tr>
+
+                                <tr>
+                                    <th>User Email</th>
+                                    <td>@Model.mail</td>
+                                </tr>
+
+                                <tr>
+                                    <th>User Address</th>
+                                    <td>@Model.Address</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th>Phone Number</th>
+                                    <td>@Model.phone</td>
+                             
+
+                                </tr>
+
+                                <tr>
+                          <th>Name on Credit Card</th>
+                          <td>@Model.creditname</td>
+                                </tr>
+                                       <tr>
+                          <th>Credit number</th>
+                          <td>@Model.Creditnumber</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                               
+                                <th>product Name</th>
+                                 <th>Product Image</th>
+                                <th>Product Description</th>
+                                <th>Product Quantity</th>
+                                <th>Product Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                           @foreach (var item in product_order.get(@Model.Id))
+                          {
+                              <tr>
+                                  <td>@product.getById(item.ProductID).Name</td>
+                                  <td> <img src="~/files/images/@product.getById(item.ProductID).imgPath" style="width50px;height:50px"></td>
+                                  <td>@product.getById(item.ProductID).Description</td>
+                                      <td>@item.Quantity</td>
+                                  <td>@product.getById(item.ProductID).unitPrice</td>
+                            </tr>
+                          }
+                            
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

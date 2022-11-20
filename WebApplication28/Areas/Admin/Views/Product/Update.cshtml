@@ -1,0 +1,80 @@
+﻿@model ProductVM
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Update Product</h4>
+                            </div>
+                            <div class="content">
+    <form asp-area="Admin" asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+        <input type="hidden"  asp-for="productID"/>
+                <input type="hidden" asp-for="imgPath" />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label asp-for="Name">Product Name:</label>
+                                                <input type="text" class="form-control border-input" placeholder="Macbook pro" asp-for="Name">
+                                           <br/>
+                                             <span class="text-danger font-weight-bold" asp-validation-for="Name"></span>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label asp-for="unitPrice">Product Price:</label>
+                                                <input type="text" class="form-control border-input" placeholder="$2500" asp-for="unitPrice">
+                                            <br/>
+                                             <span class="text-danger font-weight-bold" asp-validation-for="unitPrice"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label asp-for="Description">Product Description:</label>
+                                                <textarea  id="" cols="30" rows="10"
+                                                          class="form-control border-input" placeholder="Product Description" asp-for="Description"></textarea>
+                                           <br/>
+                                             <span class="text-danger font-weight-bold" asp-validation-for="Description"></span>
+                                                      </div>
+
+                                            <div class="form-group">
+                                                <label asp-for="img">Product Image:</label>
+                                                <br />
+                                                <img src='~/files/images/@Model.imgPath' class="img-thumbnail" />
+                                                <input type="hidden" asp-for="imgPath" />
+                                            </div>
+
+                                                 <div class="form-group">
+                                                <label asp-for="img">New Product Image:</label>
+                                                <input type="file" class="form-control border-input" name="newImg">
+                                            </div>
+                                           
+                                              <div class="form-group">
+                                                <label asp-for="quantity">Product Quantity:</label>
+                                                <input type="text" class="form-control border-input" asp-for="quantity">
+                                                <br/>
+                                             <span class="text-danger font-weight-bold" asp-validation-for="quantity"></span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="">
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Update Product</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      @section Validationscripts{
+     <script src="~/jquery/jquery.js"></script>
+  <script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+      } 
