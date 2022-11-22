@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Le/qd8Ok+d0e9RzLUYsswHdTWGWmNYud2gsuYOJvL6Q3xKPFUd38jWLyy9y3xalZGugAGko1xC01sjq2eoaQbw==",
+  "dgSpecHash": "l2cG1q+oEMRb/HRajYirpENWht4O9sF2XGgprt+eEiTSEO72UbTZN/asCTge0W5vBtofZXBEzM9WtURu5f3v+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\WebApplication28.csproj",
+  "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\WebApplication28.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Masria\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\EL-Masria\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

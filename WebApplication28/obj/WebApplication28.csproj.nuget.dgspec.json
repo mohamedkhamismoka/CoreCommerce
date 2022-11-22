@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\WebApplication28.csproj": {}
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\WebApplication28.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\WebApplication28.BL.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\WebApplication28.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\WebApplication28.BL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\WebApplication28.BL.csproj",
         "projectName": "WebApplication28.BL",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\WebApplication28.BL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\WebApplication28.BL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj"
+              "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
         "projectName": "WebApplication28.DAL",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\WebApplication28.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\WebApplication28.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\WebApplication28.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\WebApplication28.csproj",
         "projectName": "WebApplication28",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\WebApplication28.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\WebApplication28.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -176,8 +176,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\WebApplication28.BL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.BL\\WebApplication28.BL.csproj"
+              "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\WebApplication28.BL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.BL\\WebApplication28.BL.csproj"
               }
             }
           }

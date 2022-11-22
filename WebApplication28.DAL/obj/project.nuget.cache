@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fGlDIjGcMAfuPgcXpSu4n9V5aYhakgOBaSZNchWn2nHFg/OFDMKQ3JFJDoelBkm3rGVMsGYr7Zhuo0HaAqnwPA==",
+  "dgSpecHash": "XrqBfWRYUMRbLpxKipYOq8fydaPzxfHh61xlVNXxVc26OU1v5IewlvBsNENvJ1osjM0MXlLp653VB0n2N5Q9lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication28\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
+  "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\CoreCommerce\\WebApplication28.DAL\\WebApplication28.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Masria\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",
     "C:\\Users\\EL-Masria\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.17\\microsoft.aspnetcore.cryptography.keyderivation.5.0.17.nupkg.sha512",

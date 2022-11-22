@@ -46,12 +46,14 @@ namespace WebApplication28.Areas.Client.Controllers
             List<int> product_identity = new List<int>();
             List<int> product_Quantity = new List<int>();
             List<Product_orderVM> product_OrderVMs = new List<Product_orderVM>();
+            var orderdata = 0;
             try
             {
                 if (ModelState.IsValid)
                 {
                     var data = mapper.Map<Order>(order);
                     var orderid = _order.create(data);
+                    orderdata = orderid;
                     var products = prod_Cart.getUserProducts(cartid).Where(a => a.SaveForLater == false);
          
                     foreach (var item in products)
@@ -85,6 +87,10 @@ namespace WebApplication28.Areas.Client.Controllers
                 return View(order);
             }catch(Exception e)
             {
+                if (orderdata != 0)
+                {
+                    _order.delete(orderdata);
+                }
                 ViewBag.count = prod_Cart.getUserProducts(cartid).Count();
                 ViewBag.products = prod_Cart.getUserProducts(cartid).Where(a => a.SaveForLater == false);
                 ViewBag.cart = cartid;
