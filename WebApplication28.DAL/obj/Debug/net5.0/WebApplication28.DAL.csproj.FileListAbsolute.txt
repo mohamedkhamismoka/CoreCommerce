@@ -10,3 +10,15 @@ C:\Users\EL-Masria\source\repos\WebApplication28\WebApplication28.DAL\obj\Debug\
 C:\Users\EL-Masria\source\repos\WebApplication28\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.dll
 C:\Users\EL-Masria\source\repos\WebApplication28\WebApplication28.DAL\obj\Debug\net5.0\ref\WebApplication28.DAL.dll
 C:\Users\EL-Masria\source\repos\WebApplication28\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.pdb
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\bin\Debug\net5.0\WebApplication28.DAL.deps.json
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\bin\Debug\net5.0\WebApplication28.DAL.dll
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\bin\Debug\net5.0\WebApplication28.DAL.pdb
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.csproj.AssemblyReference.cache
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.AssemblyInfoInputs.cache
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.AssemblyInfo.cs
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.csproj.CoreCompileInputs.cache
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.dll
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\refint\WebApplication28.DAL.dll
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\WebApplication28.DAL.pdb
+C:\Users\EL-Masria\Documents\GitHub\CoreCommerce\WebApplication28.DAL\obj\Debug\net5.0\ref\WebApplication28.DAL.dll
