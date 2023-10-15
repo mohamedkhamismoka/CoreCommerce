@@ -1,24 +1,40 @@
+# Company Website
+
+This is a simple website for Electronic commerce with Adminstration part
+
+## Getting Started
+
+### Prerequisites
+
+To run this project locally, you need to have the following prerequisites installed:
+
+- Visual studio
+- sql server
+
+### Installation
+
+1. Clone the repository: https://github.com/mohamedkhamismoka/CoreCommerce.git
+
+2. run solution
+
+## Usage
+
+1. Start the development server
 
 
-## Welcome! 👋
+2.Your browser will be opened on the website
+## Technologies and Techniques Used
 
-- This Website as a practice for me 
+* Asp .Net core
+* Entity Framework 
+* Linq 
+* Repository Pattern
+* Asp .Net Core Identity
+* Html
+* css
+* bootstrap
+* Jquery AjAX
 
 
-
- 
-## Discription of The Website
-
-- This Website as a practice for me  as E-commerce Project this website containt part of adminstration to manage user Authorizations and orders and product list 
-- user can make order have cart 
- 
-
-## Technologies I have used
--HTML
--CSS
--JQuery
--Bootstrap 5
--Asp.Net Core
--sql server
 
 
