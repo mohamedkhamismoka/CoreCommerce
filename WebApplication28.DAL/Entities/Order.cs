@@ -10,16 +10,15 @@ namespace WebApplication28.DAL.Entities
 {
     public class Order
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+      
         public int Id { get; set; }
         public string userID { get; set; }
 
         [ForeignKey("userID")]
         public ApplicationUser User { get; set; }
 
-        [DataType(DataType.Date)]
-        [Column(TypeName = "Date")]
+        [Column(TypeName ="Date")]
+        
         public DateTime Date { get; set; }
         public int TotalPrice { get; set; }
 
@@ -31,7 +30,7 @@ namespace WebApplication28.DAL.Entities
        
         public string mail { get; set; }
 
-
+        [StringLength(20)]
         public string name { get; set; }
 
 

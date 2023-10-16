@@ -235,7 +235,8 @@ namespace WebApplication28.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("phone")
                         .HasColumnType("nvarchar(max)");
@@ -261,7 +262,8 @@ namespace WebApplication28.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("imgPath")
                         .HasColumnType("nvarchar(max)");

@@ -11,9 +11,9 @@ namespace WebApplication28.DAL.Entities
 {
     public class Product
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int productID { get; set; } 
+      
+        public int productID { get; set; }
+        [StringLength(20)]
         public string Name { get; set; }
         public string Description { get; set; }
 

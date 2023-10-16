@@ -10,8 +10,8 @@ using WebApplication28.DAL.Database;
 namespace WebApplication28.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221107043238_nullable")]
-    partial class nullable
+    [Migration("20231016213615_build-db")]
+    partial class builddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -215,44 +215,42 @@ namespace WebApplication28.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PaymentID")
-                        .HasColumnType("int");
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Creditnumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("Date");
 
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
+
+                    b.Property<string>("creditname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("userID")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PaymentID")
-                        .IsUnique();
-
                     b.HasIndex("userID");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("WebApplication28.DAL.Entities.Payment", b =>
-                {
-                    b.Property<int>("PaymentID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.HasKey("PaymentID");
-
-                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("WebApplication28.DAL.Entities.Product", b =>
@@ -266,6 +264,10 @@ namespace WebApplication28.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("imgPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("quantity")
@@ -285,6 +287,12 @@ namespace WebApplication28.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SaveForLater")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("quantity")
                         .HasColumnType("int");
 
                     b.HasKey("productID", "CartId");
@@ -323,17 +331,9 @@ namespace WebApplication28.DAL.Migrations
 
             modelBuilder.Entity("WebApplication28.DAL.Entities.Order", b =>
                 {
-                    b.HasOne("WebApplication28.DAL.Entities.Payment", "payment")
-                        .WithOne("Order")
-                        .HasForeignKey("WebApplication28.DAL.Entities.Order", "PaymentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("WebApplication28.DAL.Entities.ApplicationUser", "User")
                         .WithMany("order")
                         .HasForeignKey("userID");
-
-                    b.Navigation("payment");
 
                     b.Navigation("User");
                 });
@@ -391,11 +391,6 @@ namespace WebApplication28.DAL.Migrations
             modelBuilder.Entity("WebApplication28.DAL.Entities.Order", b =>
                 {
                     b.Navigation("product_order");
-                });
-
-            modelBuilder.Entity("WebApplication28.DAL.Entities.Payment", b =>
-                {
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("WebApplication28.DAL.Entities.Product", b =>

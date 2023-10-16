@@ -10,8 +10,7 @@ namespace WebApplication28.DAL.Entities
 {
     public class Cart
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int CartId { get; set; } 
         public ApplicationUser user { get; set; }
 

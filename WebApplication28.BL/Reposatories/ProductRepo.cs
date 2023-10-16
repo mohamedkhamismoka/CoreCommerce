@@ -19,7 +19,7 @@ namespace WebApplication28.BL.Reposatories
 
         public ProductRepo(DatabaseContext db)
         {
-this.db = db;
+               this.db = db;
         }
         public void create(Product product)
         {
