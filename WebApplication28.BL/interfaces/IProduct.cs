@@ -23,6 +23,8 @@ namespace WebApplication28.BL.interfaces
 
         public void decrement(List<int> id, List<int> quantity);
 
+        public void increment(List<int> id, List<int> quantity);
+
 
 
 

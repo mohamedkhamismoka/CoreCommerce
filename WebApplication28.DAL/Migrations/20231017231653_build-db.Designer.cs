@@ -10,7 +10,7 @@ using WebApplication28.DAL.Database;
 namespace WebApplication28.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231016213615_build-db")]
+    [Migration("20231017231653_build-db")]
     partial class builddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -227,8 +227,8 @@ namespace WebApplication28.DAL.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("Date");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("creditname")
                         .HasColumnType("nvarchar(max)");

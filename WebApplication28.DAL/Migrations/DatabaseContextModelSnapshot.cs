@@ -225,8 +225,8 @@ namespace WebApplication28.DAL.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("Date");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("creditname")
                         .HasColumnType("nvarchar(max)");

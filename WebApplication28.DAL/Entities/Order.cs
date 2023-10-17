@@ -20,7 +20,8 @@ namespace WebApplication28.DAL.Entities
         [Column(TypeName ="Date")]
         
         public DateTime Date { get; set; }
-        public int TotalPrice { get; set; }
+     
+        public decimal TotalPrice { get; set; }
 
         public IEnumerable<Product_order> product_order { get; set; }
 

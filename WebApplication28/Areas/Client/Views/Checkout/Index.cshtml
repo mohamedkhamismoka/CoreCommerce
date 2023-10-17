@@ -73,10 +73,11 @@
         <div class="col-md-7">  
             <h4>Billing Details</h4>
 
-               <form asp-area="Client" asp-controller="Checkout" asp-action="Index" method="post">  
-     
+               <form asp-area="Client" asp-controller="Checkout" asp-action="Index" method="post">
+                    <input class="totalprice" name="TotalPrice" type="hidden" class="form-control" />
+
                     <input value="@ViewBag.cart" name="cartid" type="hidden" />
-                      <input value="" class="totalprice" asp-for="TotalPrice" type="hidden" />
+                    
                   
                     <div class="form-group ">
                       <label asp-for="mail">Email</label>
@@ -208,17 +209,20 @@
 <script src="~/jquery-validate/jquery.validate.min.js"></script>
 <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 <script>
-    var total=0;
-     $(".your-order-table tbody tr").each(function(){
-     var ele=parseInt($(this).find("td:last-child span").html())*parseInt($(this).find("td:nth-child(3) span").html())
-    
-   total+=ele;
-  })
-    $(".detail tr:nth-child(2)").find("td:nth-child(2)").html(total.toString());
-$(".detail tr:nth-child(3)").find("td:nth-child(2)").html(total*10/100);
-     $(".detail tr:nth-child(4)").find("th:nth-child(2)").html((total*10/100)+total);
+    $(document).ready(function(){
+            var total = 0;
+            $(".your-order-table tbody tr").each(function () {
+                var ele = parseInt($(this).find("td:last-child span").html()) * parseInt($(this).find("td:nth-child(3) span").html())
 
-     $(".totalprice").val((total*10/100)+total);
+                total += ele;
+            })
+            $(".detail tr:nth-child(2)").find("td:nth-child(2)").html(total.toString());
+            $(".detail tr:nth-child(3)").find("td:nth-child(2)").html(total * 10 / 100);
+            $(".detail tr:nth-child(4)").find("th:nth-child(2)").html((total * 10 / 100) + total);
+
+            $(".totalprice").val((total * 10 / 100) + total);
+        })
+
 </script>
 </body>
 

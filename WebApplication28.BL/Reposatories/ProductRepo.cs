@@ -60,5 +60,17 @@ namespace WebApplication28.BL.Reposatories
 
             db.SaveChanges();
         }
+
+        public void increment(List<int> id, List<int> quantity)
+        {
+            for (int i = 0; i < id.Count; i++)
+            {
+                var ele = db.Products.Find(id[i]);
+                ele.quantity = ele.quantity + quantity[i];
+            }
+
+            db.SaveChanges();
+        }
     }
+
 }

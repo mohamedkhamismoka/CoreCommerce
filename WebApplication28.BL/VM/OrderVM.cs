@@ -21,7 +21,7 @@ namespace WebApplication28.BL.VM
         public ApplicationUser User { get; set; }
 
     
-        public int TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
 
         public IEnumerable<Product_order> product_order { get; set; }
 
