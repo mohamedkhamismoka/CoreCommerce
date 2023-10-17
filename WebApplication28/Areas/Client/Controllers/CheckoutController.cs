@@ -69,7 +69,7 @@ namespace WebApplication28.Areas.Client.Controllers
 
                     }
                     var result = mapper.Map<IEnumerable<Product_order>>(product_OrderVMs);
-                    product_Order.insert(result);
+                    product_Order.Addrange(result);
 
                     foreach (var item in products)
                     {

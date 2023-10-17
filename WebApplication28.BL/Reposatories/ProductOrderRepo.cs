@@ -34,7 +34,7 @@ namespace WebApplication28.BL.Reposatories
             return db.product_Orders.Select(a => a);
         }
 
-        public void insert(IEnumerable<Product_order> product_Order)
+        public void Addrange(IEnumerable<Product_order> product_Order)
         {
          db.product_Orders.AddRange(product_Order);
             db.SaveChanges();
