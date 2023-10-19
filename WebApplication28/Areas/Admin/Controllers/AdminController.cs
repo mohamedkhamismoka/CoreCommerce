@@ -94,8 +94,6 @@ namespace WebApplication28.Areas.Admin.Controllers
       public IActionResult Index()
         {
 
-           
-           
             return View(usermanager.Users);
         }
 

@@ -79,12 +79,15 @@ namespace WebApplication28.Areas.Account.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new ApplicationUser();
-                    user.Email = signup.mail;
-                    user.UserName = signup.userName;
-                    user.address=signup.address;
-                    user.CartId = null;
-                    user.isActive = true;
+                    var user = new ApplicationUser
+                    {
+                        Email = signup.mail,
+                        UserName = signup.userName,
+                        address = signup.address,
+
+                        isActive = true,
+                        PhoneNumber = signup.Phone,
+                    };
                     var result=await usermanager.CreateAsync(user, signup.password);
                     if (result.Succeeded)
                     {
